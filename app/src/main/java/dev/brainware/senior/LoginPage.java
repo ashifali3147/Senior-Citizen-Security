@@ -23,6 +23,7 @@ public class LoginPage extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Toast.makeText(LoginPage.this, "Login", Toast.LENGTH_SHORT).show();
+                startActivity(new Intent(LoginPage.this, Home.class));
             }
         });
         tvRegister.setOnClickListener(new View.OnClickListener() {

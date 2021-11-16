@@ -10,6 +10,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.SeniorCtizenSecurity">
         <activity
+            android:name=".BmiHome"
+            android:exported="true" />
+        <activity
+            android:name=".Home"
+            android:exported="true" />
+        <activity
             android:name=".Register"
             android:exported="true" />
         <activity
