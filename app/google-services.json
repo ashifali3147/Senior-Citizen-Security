@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "487613806600",
+    "project_id": "senior-citizen-security",
+    "storage_bucket": "senior-citizen-security.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:487613806600:android:5063998f4fde4eb75a79bd",
+        "android_client_info": {
+          "package_name": "dev.brainware.senior"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "487613806600-739i47k8quj59uvadd1guc5foiuoh6ol.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAk53ZWPrWfnLjrwqSQf2aJ0SAQBNr0_ko"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "487613806600-739i47k8quj59uvadd1guc5foiuoh6ol.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

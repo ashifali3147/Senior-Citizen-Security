@@ -15,20 +15,21 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="30dp"
         app:srcCompat="@drawable/adduser"/>
+
     <EditText
         android:id="@+id/tvName"
-        android:hint=" Name"
-        android:textColorHint="@color/white"
         android:layout_width="300dp"
         android:layout_height="40dp"
-        android:drawableLeft="@drawable/icon_user"
         android:layout_below="@+id/imgUser"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="60dp"
-        android:ems="10"
-        android:textColor="@color/white"
         android:background="@drawable/textview_rounded"
-        android:inputType="textPersonName" />
+        android:drawableLeft="@drawable/icon_user"
+        android:ems="10"
+        android:hint=" Name"
+        android:inputType="textPersonName"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white" />
 
     <EditText
         android:id="@+id/tvEmail"
