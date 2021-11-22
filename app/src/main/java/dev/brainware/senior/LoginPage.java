@@ -3,8 +3,10 @@ package dev.brainware.senior;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -57,6 +59,9 @@ public class LoginPage extends AppCompatActivity {
     private void performLogin() {
         String email = tvEmail.getText().toString();
         String password = tvPassword.getText().toString();
+//        -------------------------------SharedPreferences---------------------------
+        SharedPreferences pref = getSharedPreferences("dev.brainware.senior.logdetails", Activity.MODE_PRIVATE);
+        SharedPreferences.Editor editor = pref.edit();
 
         if (!email.matches(emailPattern)) {
             tvEmail.setError("Enter correct Email");
@@ -74,6 +79,8 @@ public class LoginPage extends AppCompatActivity {
                     if(task.isSuccessful()){
                         progressDialog.dismiss();
                         Toast.makeText(LoginPage.this, "Login Successful", Toast.LENGTH_SHORT).show();
+                        editor.putBoolean("isLogin", true);
+                        editor.apply();
                         Intent intent = new Intent(LoginPage.this, Home.class);
                         intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_NEW_TASK);
                         startActivity(intent);

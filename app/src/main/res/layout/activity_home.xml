@@ -23,6 +23,11 @@
             android:gravity="center_vertical"
             android:textSize="50sp"/>
     </LinearLayout>
+    <Button
+        android:id="@+id/btnLogout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="LOGOUT"/>
 
 
 </LinearLayout>
