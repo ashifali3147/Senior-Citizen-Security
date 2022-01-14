@@ -2,6 +2,8 @@ package dev.brainware.senior;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Activity;
+import android.content.SharedPreferences;
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
@@ -16,10 +18,12 @@ public class StepCounter extends AppCompatActivity implements SensorEventListene
     private Sensor mStepCounter;
     private  Boolean isCounterSensorPresent;
     int stepCount = 0;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_step_counter);
+        getSupportActionBar().hide();
         tvStepCounter = (TextView) findViewById(R.id.tv_step_counter);
         sensorManager = (SensorManager) getSystemService(SENSOR_SERVICE);
         if(sensorManager.getDefaultSensor(Sensor.TYPE_STEP_COUNTER) !=null){
@@ -36,7 +40,14 @@ public class StepCounter extends AppCompatActivity implements SensorEventListene
     public void onSensorChanged(SensorEvent sensorEvent) {
         if (sensorEvent.sensor == mStepCounter){
             stepCount = (int) sensorEvent.values[0];
-            tvStepCounter.setText(String.valueOf(stepCount));
+            SharedPreferences pref = getSharedPreferences("dev.brainware.senior.logdetails", Activity.MODE_PRIVATE);
+            SharedPreferences.Editor editor = pref.edit();
+            editor.putString("memoryStepCount", Integer.toString(stepCount));
+
+            tvStepCounter.setText(String.valueOf(pref.getString("memoryStepCount",null)));
+            editor.apply();
+
+
         }
     }
 
@@ -49,7 +60,7 @@ public class StepCounter extends AppCompatActivity implements SensorEventListene
     protected void onResume() {
         super.onResume();
         if (sensorManager.getDefaultSensor(Sensor.TYPE_STEP_COUNTER) != null){
-            sensorManager.registerListener(this, mStepCounter, SensorManager.SENSOR_DELAY_NORMAL);
+            sensorManager.registerListener(this, mStepCounter, SensorManager.SENSOR_DELAY_GAME);
         }
     }
 

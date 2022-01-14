@@ -13,28 +13,39 @@
         android:layout_marginLeft="5dp"
         android:layout_marginRight="5dp"
         android:weightSum="2"
-        android:background="@drawable/cardbackgroung"
         android:orientation="horizontal">
-        <ImageView
-            android:id="@+id/imgBmi"
-            android:layout_width="150dp"
+        <LinearLayout
+            android:layout_width="100dp"
             android:layout_height="150dp"
-            android:layout_weight="1"
+            android:layout_margin="10dp"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:background="@drawable/cardbackgroung"
+            android:layout_weight="1">
+            <ImageView
+                android:id="@+id/imgBmi"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:padding="8dp"
+                android:src="@drawable/bmi"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="100dp"
+            android:layout_height="150dp"
+            android:layout_margin="10dp"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:background="@drawable/cardbackgroung"
+            android:layout_weight="1">
+            <ImageView
+                android:id="@+id/imgStep"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:padding="8dp"
+                android:src="@drawable/step_counter"/>
+        </LinearLayout>
 
-            android:src="@drawable/bmi_icon"/>
-        <ImageView
-            android:id="@+id/imgStep"
-            android:layout_weight="1"
-            android:layout_width="150dp"
-            android:layout_height="150dp"
-            android:src="@drawable/step_counter"/>
 
     </LinearLayout>
-    <Button
-        android:id="@+id/btnLogout"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="LOGOUT"/>
-
 
 </LinearLayout>
