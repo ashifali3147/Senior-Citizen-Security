@@ -12,7 +12,7 @@ import android.widget.ImageView;
 import android.widget.Toast;
 
 public class Home extends AppCompatActivity {
-    ImageView imgBmi;
+    ImageView imgBmi, imgStep;
     Button btnLogout;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,6 +22,7 @@ public class Home extends AppCompatActivity {
         SharedPreferences.Editor editor = pref.edit();
         imgBmi = (ImageView) findViewById(R.id.imgBmi);
         btnLogout = (Button) findViewById(R.id.btnLogout);
+        imgStep = (ImageView) findViewById(R.id.imgStep);
         imgBmi.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -36,6 +37,12 @@ public class Home extends AppCompatActivity {
                 editor.apply();
                 startActivity(new Intent(Home.this, LoginPage.class));
                 finish();
+            }
+        });
+        imgStep.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(Home.this, StepCounter.class));
             }
         });
     }
